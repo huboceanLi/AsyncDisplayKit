@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HYAsyncDisplayKit: 8c1b08459108318f389e9abc6c8c0bf33deba3f4
+  HYAsyncDisplayKit: 721c4fc6af93adb12d0e64fcd18d4d2ccb3a4dca
 
 PODFILE CHECKSUM: 3e0f495e27bf0b42aa4163d258b49948da5087a2
 

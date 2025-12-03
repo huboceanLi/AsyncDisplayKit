@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HYAsyncDisplayKit'
-  s.version          = '0.1.9'
+  s.version          = '0.2.0'
   s.summary          = 'A short description of HYAsyncDisplayKit.'
 
 # This description is used to generate tags and improve search results.
@@ -28,44 +28,16 @@ Add long description of the pod here.
   s.source           = { :git => 'https://github.com/huboceanLi/AsyncDisplayKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.compiler_flags = '-x objective-c++ -std=c++11 -stdlib=libc++'
+  s.weak_frameworks = 'Photos','MapKit','AssetsLibrary'
 
-  s.user_target_xcconfig = {
-    'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++14',
-    'CLANG_CXX_LIBRARY' => 'libc++',
-    'OTHER_CPLUSPLUSFLAGS' => '-std=gnu++14 -stdlib=libc++'
-  }
-  
-  s.libraries = 'c++', 'z', 'sqlite3'
+  s.library = 'c++'
     s.pod_target_xcconfig = {
       'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',
-      'CLANG_CXX_LIBRARY' => 'libc++',
-      'GCC_ENABLE_CPP_EXCEPTIONS' => 'YES',
-      'OTHER_CPLUSPLUSFLAGS' => '-std=c++11 -stdlib=libc++',
-      'OTHER_LDFLAGS' => %{
-        $(inherited)
-        -lc++
-        -framework AVFoundation
-        -framework Accelerate
-        -framework AssetsLibrary
-        -framework CoreLocation
-        -framework CoreMedia
-        -framework ImageIO
-        -framework MapKit
-        -framework Photos
-        -framework UIKit
-      }
+      'CLANG_CXX_LIBRARY' => 'libc++'
     }
 
   s.ios.deployment_target = '14.0'
   s.requires_arc = true
   s.source_files = 'HYAsyncDisplayKit/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'HYAsyncDisplayKit' => ['HYAsyncDisplayKit/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-    # s.frameworks = 'vector'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

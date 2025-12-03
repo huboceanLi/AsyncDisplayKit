@@ -15,23 +15,15 @@
     "git": "https://github.com/huboceanLi/AsyncDisplayKit.git",
     "tag": "0.1.9"
   },
-  "compiler_flags": "-x objective-c++ -std=c++11 -stdlib=libc++",
-  "user_target_xcconfig": {
-    "CLANG_CXX_LANGUAGE_STANDARD": "gnu++14",
-    "CLANG_CXX_LIBRARY": "libc++",
-    "OTHER_CPLUSPLUSFLAGS": "-std=gnu++14 -stdlib=libc++"
-  },
-  "libraries": [
-    "c++",
-    "z",
-    "sqlite3"
+  "weak_frameworks": [
+    "Photos",
+    "MapKit",
+    "AssetsLibrary"
   ],
+  "libraries": "c++",
   "pod_target_xcconfig": {
     "CLANG_CXX_LANGUAGE_STANDARD": "c++11",
-    "CLANG_CXX_LIBRARY": "libc++",
-    "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
-    "OTHER_CPLUSPLUSFLAGS": "-std=c++11 -stdlib=libc++",
-    "OTHER_LDFLAGS": "\n        $(inherited)\n        -lc++\n        -framework AVFoundation\n        -framework Accelerate\n        -framework AssetsLibrary\n        -framework CoreLocation\n        -framework CoreMedia\n        -framework ImageIO\n        -framework MapKit\n        -framework Photos\n        -framework UIKit\n      "
+    "CLANG_CXX_LIBRARY": "libc++"
   },
   "platforms": {
     "ios": "14.0"
