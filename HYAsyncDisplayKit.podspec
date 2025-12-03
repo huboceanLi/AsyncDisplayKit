@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HYAsyncDisplayKit'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A short description of HYAsyncDisplayKit.'
 
 # This description is used to generate tags and improve search results.
@@ -27,6 +27,11 @@ Add long description of the pod here.
   s.author           = { 'li437277219@gmail.com' => 'li437277219@gmail.com' }
   s.source           = { :git => 'https://github.com/huboceanLi/AsyncDisplayKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+
+    s.pod_target_xcconfig = {
+      'CLANG_CXX_LANGUAGE_STANDARD' => 'c++17',
+      'CLANG_CXX_LIBRARY'           => 'libc++'
+    }
 
   s.ios.deployment_target = '10.0'
 
