@@ -1,6 +1,6 @@
 {
   "name": "HYAsyncDisplayKit",
-  "version": "0.1.9",
+  "version": "0.2.3",
   "summary": "A short description of HYAsyncDisplayKit.",
   "description": "Add long description of the pod here.",
   "homepage": "https://github.com/huboceanLi/AsyncDisplayKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/huboceanLi/AsyncDisplayKit.git",
-    "tag": "0.1.9"
+    "tag": "0.2.3"
   },
   "weak_frameworks": [
     "Photos",
@@ -22,8 +22,23 @@
   ],
   "libraries": "c++",
   "pod_target_xcconfig": {
-    "CLANG_CXX_LANGUAGE_STANDARD": "c++11",
-    "CLANG_CXX_LIBRARY": "libc++"
+    "CLANG_CXX_LANGUAGE_STANDARD": "gnu++14",
+    "CLANG_CXX_LIBRARY": "libc++",
+    "OTHER_CPLUSPLUSFLAGS": "-std=gnu++14 -stdlib=libc++ -fcxx-modules -fmodules",
+    "OTHER_CFLAGS": "-fmodules -fcxx-modules -Qunused-arguments",
+    "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
+    "GCC_ENABLE_CPP_RTTI": "YES",
+    "HEADER_SEARCH_PATHS": "\"$(inherited)\" \"${PODS_ROOT}/HYAsyncDisplayKit\" \"${SDKROOT}/usr/include/c++/v1\" \"${SDKROOT}/usr/include\" \"${SDKROOT}/usr/lib/swift\" \"$(PLATFORM_DIR)/Developer/SDKs/$(PLATFORM_NAME).sdk/usr/include/c++/v1\" \"$(PLATFORM_DIR)/Developer/SDKs/$(PLATFORM_NAME).sdk/usr/include\"",
+    "FRAMEWORK_SEARCH_PATHS": "\"$(inherited)\" \"$(PLATFORM_DIR)/Developer/Library/Frameworks\"",
+    "OTHER_LDFLAGS": "-ObjC -lc++ -lstdc++ -all_load",
+    "DEFINES_MODULE": "YES",
+    "CLANG_ENABLE_MODULES": "YES",
+    "CLANG_MODULES_AUTOLINK": "YES",
+    "USE_HEADERMAP": "NO",
+    "VALID_ARCHS": "arm64 arm64e armv7 armv7s x86_64",
+    "ARCHS": "$(ARCHS_STANDARD)",
+    "GCC_OPTIMIZATION_LEVEL": "0",
+    "GCC_GENERATE_DEBUGGING_SYMBOLS": "YES"
   },
   "platforms": {
     "ios": "14.0"
