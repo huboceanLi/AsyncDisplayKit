@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'HYAsyncDisplayKit_Example' do
+  pod 'HYAsyncDisplayKit', :path => '../'
+
+  target 'HYAsyncDisplayKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
