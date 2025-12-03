@@ -1,6 +1,6 @@
 {
   "name": "HYAsyncDisplayKit",
-  "version": "0.2.6",
+  "version": "0.2.8",
   "license": {
     "type": "BSD"
   },
@@ -11,7 +11,7 @@
   "summary": "Smooth asynchronous user interfaces for iOS apps.",
   "source": {
     "git": "https://github.com/huboceanLi/AsyncDisplayKit.git",
-    "tag": "0.2.6"
+    "tag": "0.2.8"
   },
   "weak_frameworks": [
     "Photos",
@@ -20,7 +20,7 @@
   ],
   "requires_arc": true,
   "platforms": {
-    "ios": "14.0"
+    "ios": "10.0"
   },
   "static_framework": true,
   "user_target_xcconfig": {
