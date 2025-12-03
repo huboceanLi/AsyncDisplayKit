@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HYAsyncDisplayKit'
-  s.version          = '0.2.2'
+  s.version          = '0.2.3'
   s.summary          = 'A short description of HYAsyncDisplayKit.'
 
 # This description is used to generate tags and improve search results.
@@ -31,13 +31,74 @@ Add long description of the pod here.
   s.weak_frameworks = 'Photos','MapKit','AssetsLibrary'
 
   s.library = 'c++'
-    s.pod_target_xcconfig = {
-      'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',
-      'CLANG_CXX_LIBRARY' => 'libc++',
-          # 启用 C++ 特性
+
+# 完整的编译器配置
+  s.pod_target_xcconfig = {
+    # C++ 语言标准
+    'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++14',
+    'CLANG_CXX_LIBRARY' => 'libc++',
+    
+    # C++ 标志
+    'OTHER_CPLUSPLUSFLAGS' => [
+      '-std=gnu++14',
+      '-stdlib=libc++',
+      '-fcxx-modules',
+      '-fmodules'
+    ].join(' '),
+    
+    # C 标志
+    'OTHER_CFLAGS' => [
+      '-fmodules',
+      '-fcxx-modules',
+      '-Qunused-arguments'
+    ].join(' '),
+    
+    # 启用 C++ 特性
     'GCC_ENABLE_CPP_EXCEPTIONS' => 'YES',
     'GCC_ENABLE_CPP_RTTI' => 'YES',
-    }
+    
+    # 头文件搜索路径 - 这是关键！
+    'HEADER_SEARCH_PATHS' => [
+      '"$(inherited)"',
+      '"${PODS_ROOT}/HYAsyncDisplayKit"',
+      '"${SDKROOT}/usr/include/c++/v1"',
+      '"${SDKROOT}/usr/include"',
+      '"${SDKROOT}/usr/lib/swift"',
+      '"$(PLATFORM_DIR)/Developer/SDKs/$(PLATFORM_NAME).sdk/usr/include/c++/v1"',
+      '"$(PLATFORM_DIR)/Developer/SDKs/$(PLATFORM_NAME).sdk/usr/include"'
+    ].join(' '),
+    
+    # 系统框架搜索路径
+    'FRAMEWORK_SEARCH_PATHS' => [
+      '"$(inherited)"',
+      '"$(PLATFORM_DIR)/Developer/Library/Frameworks"'
+    ].join(' '),
+    
+    # 链接器标志
+    'OTHER_LDFLAGS' => [
+      '-ObjC',
+      '-lc++',
+      '-lstdc++',
+      '-all_load'
+    ].join(' '),
+    
+    # 模块配置
+    'DEFINES_MODULE' => 'YES',
+    'CLANG_ENABLE_MODULES' => 'YES',
+    'CLANG_MODULES_AUTOLINK' => 'YES',
+    
+    # 禁用 header map
+    'USE_HEADERMAP' => 'NO',
+    
+    # 架构设置
+    'VALID_ARCHS' => 'arm64 arm64e armv7 armv7s x86_64',
+    'ARCHS' => '$(ARCHS_STANDARD)',
+    
+    # 调试优化
+    'GCC_OPTIMIZATION_LEVEL' => '0',
+    'GCC_GENERATE_DEBUGGING_SYMBOLS' => 'YES'
+  }
+  
 
   s.ios.deployment_target = '14.0'
   s.requires_arc = true
