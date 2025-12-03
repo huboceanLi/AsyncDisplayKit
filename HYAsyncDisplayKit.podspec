@@ -7,7 +7,7 @@
 #
 Pod::Spec.new do |spec|
   spec.name         = 'HYAsyncDisplayKit'
-  spec.version      = '0.2.8'
+  spec.version      = '0.2.9'
   spec.license      =  { :type => 'BSD' }
   spec.homepage     = 'https://github.com/huboceanLi/AsyncDisplayKit'
   spec.author           = { 'li437277219@gmail.com' => 'li437277219@gmail.com' }
@@ -22,7 +22,8 @@ Pod::Spec.new do |spec|
   spec.static_framework = true
   # 用户目标配置
   spec.user_target_xcconfig = {
-     'OTHER_LDFLAGS' => '-ObjC'
+     'OTHER_LDFLAGS' => '-ObjC',
+     'GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS' => 'NO'
    }
    
   # Uncomment when fixed: issues with tvOS build for release 2.0
@@ -44,9 +45,11 @@ Pod::Spec.new do |spec|
     'CLANG_ENABLE_MODULES' => 'YES',    # 启用 Clang 模块
     'CLANG_MODULES_AUTOLINK' => 'YES',  # 自动链接模块
     'PRODUCT_MODULE_NAME' => 'HYAsyncDisplayKit',  # 模块名称
-    
+    # 禁用所有废弃警告
+    'GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS' => 'NO',
+    'CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS' => 'NO',
     # 对应 copts = ["-Werror"]
-#    'GCC_TREAT_WARNINGS_AS_ERRORS' => 'YES',  # 将警告视为错误
+    'GCC_TREAT_WARNINGS_AS_ERRORS' => 'NO',  # 将警告视为错误
 # 禁用隐式 retain self 警告
   'CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF' => 'NO',
     # 对应 cxxopts = ["-Werror", "-std=c++17"]
