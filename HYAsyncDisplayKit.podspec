@@ -5,117 +5,66 @@
 # Any lines starting with a # are optional, but their use is encouraged
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
 #
+Pod::Spec.new do |spec|
+  spec.name         = 'HYAsyncDisplayKit'
+  spec.version      = '0.2.7'
+  spec.license      =  { :type => 'BSD' }
+  spec.homepage     = 'https://github.com/huboceanLi/AsyncDisplayKit'
+  spec.author           = { 'li437277219@gmail.com' => 'li437277219@gmail.com' }
+  spec.summary      = 'Smooth asynchronous user interfaces for iOS apps.'
+  spec.source       = { :git => 'https://github.com/huboceanLi/AsyncDisplayKit.git', :tag => spec.version.to_s }
 
-Pod::Spec.new do |s|
-  s.name             = 'HYAsyncDisplayKit'
-  s.version          = '0.2.5'
-  s.summary          = 'A short description of HYAsyncDisplayKit.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  spec.weak_frameworks = 'Photos','MapKit','AssetsLibrary'
+  spec.requires_arc = true
 
-  s.description      = <<-DESC
-Add long description of the pod here.
-                       DESC
+  spec.ios.deployment_target = '14.0'
+  spec.static_framework = true
+  # 用户目标配置
+  spec.user_target_xcconfig = {
+     'OTHER_LDFLAGS' => '-ObjC'
+   }
+   
+  # Uncomment when fixed: issues with tvOS build for release 2.0
+  # spec.tvos.deployment_target = '9.0'
 
-  s.homepage         = 'https://github.com/huboceanLi/AsyncDisplayKit'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'li437277219@gmail.com' => 'li437277219@gmail.com' }
-  s.source           = { :git => 'https://github.com/huboceanLi/AsyncDisplayKit.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  # Subspecs
+  spec.source_files = 'HYAsyncDisplayKit/Classes/**/*'
 
-  s.weak_frameworks = 'Photos','MapKit','AssetsLibrary'
+  spec.libraries = 'c++', 'z'
 
-  s.libraries = 'c++', 'stdc++'
+#  spec.pod_target_xcconfig = {
+#       'CLANG_CXX_LANGUAGE_STANDARD' => 'c++17',
+#       'CLANG_CXX_LIBRARY' => 'libc++'
+#  }
 
-# 完整的编译器配置
-  s.pod_target_xcconfig = {
-    # C++ 语言标准
-    'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++14',
+  # 对应 enable_modules = True, module_name = "AsyncDisplayKit"
+  spec.pod_target_xcconfig = {
+    'DEFINES_MODULE' => 'YES',          # 启用模块
+    'CLANG_ENABLE_MODULES' => 'YES',    # 启用 Clang 模块
+    'CLANG_MODULES_AUTOLINK' => 'YES',  # 自动链接模块
+    'PRODUCT_MODULE_NAME' => 'HYAsyncDisplayKit',  # 模块名称
+    
+    # 对应 copts = ["-Werror"]
+#    'GCC_TREAT_WARNINGS_AS_ERRORS' => 'YES',  # 将警告视为错误
+# 禁用隐式 retain self 警告
+  'CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF' => 'NO',
+    # 对应 cxxopts = ["-Werror", "-std=c++17"]
+    'CLANG_CXX_LANGUAGE_STANDARD' => 'c++17',
     'CLANG_CXX_LIBRARY' => 'libc++',
+    'OTHER_CPLUSPLUSFLAGS' => '-std=c++17 -Werror -stdlib=libc++',
     
-    # C++ 标志
-    'OTHER_CPLUSPLUSFLAGS' => [
-      '-std=gnu++14',
-      '-stdlib=libc++',
-      '-fcxx-modules',
-      '-fmodules'
-    ].join(' '),
+    # 对应 defines = ["MINIMAL_ASDK"]
+    'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) MINIMAL_ASDK=1',
     
-    # C 标志
-    'OTHER_CFLAGS' => [
-      '-fmodules',
-      '-fcxx-modules',
-      '-Qunused-arguments'
-    ].join(' '),
-    
-    # 启用 C++ 特性
-    'GCC_ENABLE_CPP_EXCEPTIONS' => 'YES',
-    'GCC_ENABLE_CPP_RTTI' => 'YES',
-    
-    # 头文件搜索路径 - 这是关键！
+    # 头文件搜索路径
     'HEADER_SEARCH_PATHS' => [
-      '"$(inherited)"',
-      '"${PODS_ROOT}/HYAsyncDisplayKit"',
-      '"${SDKROOT}/usr/include/c++/v1"',
-      '"${SDKROOT}/usr/include"',
-      '"${SDKROOT}/usr/lib/swift"',
-      '"$(PLATFORM_DIR)/Developer/SDKs/$(PLATFORM_NAME).sdk/usr/include/c++/v1"',
-      '"$(PLATFORM_DIR)/Developer/SDKs/$(PLATFORM_NAME).sdk/usr/include"'
-    ].join(' '),
+      '"${PODS_ROOT}/HYAsyncDisplayKit/Source"',
+      '"${PODS_ROOT}/HYAsyncDisplayKit/Source/PublicHeaders"'
+    ].join(' ')
     
-    # 系统框架搜索路径
-    'FRAMEWORK_SEARCH_PATHS' => [
-      '"$(inherited)"',
-      '"$(PLATFORM_DIR)/Developer/Library/Frameworks"'
-    ].join(' '),
-    
-    # 链接器标志
-    'OTHER_LDFLAGS' => [
-      '-ObjC',
-      '-lc++',
-      '-lstdc++',
-      '-all_load'
-    ].join(' '),
-    
-    # 模块配置
-    'DEFINES_MODULE' => 'YES',
-    'CLANG_ENABLE_MODULES' => 'YES',
-    'CLANG_MODULES_AUTOLINK' => 'YES',
-    
-    # 禁用 header map
-    'USE_HEADERMAP' => 'NO',
-    
-    # 架构设置
-    'VALID_ARCHS' => 'arm64 arm64e armv7 armv7s x86_64',
-    'ARCHS' => '$(ARCHS_STANDARD)',
-    
-    # 调试优化
-    'GCC_OPTIMIZATION_LEVEL' => '0',
-    'GCC_GENERATE_DEBUGGING_SYMBOLS' => 'YES'
   }
   
-  # 源文件配置
-  s.source_files = [
-    'HYAsyncDisplayKit/**/*.{h,m,mm,c,cpp,cc,cxx}',
-    'HYAsyncDisplayKit/**/*.{hpp,ipp,tpp}'
-  ]
-  
-  # 排除不需要的文件
-  s.exclude_files = [
-    'HYAsyncDisplayKit/Info.plist',
-    'HYAsyncDisplayKit/*.plist',
-    '**/*Test*',
-    '**/*Tests*',
-    '**/*Demo*',
-    '**/*Example*'
-  ]
-  s.ios.deployment_target = '14.0'
-  s.requires_arc = true
-  s.source_files = 'HYAsyncDisplayKit/Classes/**/*'
+  spec.frameworks = 'UIKit', 'Foundation', 'QuartzCore', 'CoreMedia', 'CoreText', 'CoreGraphics'
 
 end

@@ -593,7 +593,7 @@ ASLayoutElementStyleExtensibilityForwarding
   int32_t transitionID = [self _startNewTransition];
   // NOTE: This block captures self. It's cheaper than hitting the weak table.
   asdisplaynode_iscancelled_block_t isCancelled = ^{
-    BOOL result = (_transitionID != transitionID);
+      BOOL result = (self->_transitionID != transitionID);
     if (result) {
     }
     return result;
@@ -613,7 +613,7 @@ ASLayoutElementStyleExtensibilityForwarding
     }
     
     // Perform a full layout creation pass with passed in constrained size to create the new layout for the transition
-    NSUInteger newLayoutVersion = _layoutVersion;
+      NSUInteger newLayoutVersion = self->_layoutVersion;
     ASLayout *newLayout;
     {
       ASScopedLockSelfOrToRoot();
@@ -647,10 +647,10 @@ ASLayoutElementStyleExtensibilityForwarding
       {
         // Grab __instanceLock__ here to make sure this transition isn't invalidated
         // right after it passed the validation test and before it proceeds
-        MutexLocker l(__instanceLock__);
+          MutexLocker l(self->__instanceLock__);
         
         // Update calculated layout
-        const auto previousLayout = _calculatedDisplayNodeLayout;
+          const auto previousLayout = self->_calculatedDisplayNodeLayout;
         const auto pendingLayout = ASDisplayNodeLayout(newLayout,
                                                 constrainedSize,
                                                 constrainedSize.max,
@@ -658,12 +658,12 @@ ASLayoutElementStyleExtensibilityForwarding
         [self _locked_setCalculatedDisplayNodeLayout:pendingLayout];
         
         // Setup pending layout transition for animation
-        _pendingLayoutTransition = pendingLayoutTransition = [[ASLayoutTransition alloc] initWithNode:self
+          self->_pendingLayoutTransition = pendingLayoutTransition = [[ASLayoutTransition alloc] initWithNode:self
                                                                                         pendingLayout:pendingLayout
                                                                                        previousLayout:previousLayout];
         // Setup context for pending layout transition. we need to hold a strong reference to the context
-        _pendingLayoutTransitionContext = pendingLayoutTransitionContext = [[_ASTransitionContext alloc] initWithAnimation:animated
-                                                                                                            layoutDelegate:_pendingLayoutTransition
+          self->_pendingLayoutTransitionContext = pendingLayoutTransitionContext = [[_ASTransitionContext alloc] initWithAnimation:animated
+                                                                                                                    layoutDelegate:self->_pendingLayoutTransition
                                                                                                         completionDelegate:self];
       }
       
@@ -994,7 +994,7 @@ ASLayoutElementStyleExtensibilityForwarding
     if (self.isNodeLoaded) {
       ASPerformBlockOnMainThread(^{
         if (self.contents == nil) {
-          _placeholderImage = [self placeholderImage];
+            self->_placeholderImage = [self placeholderImage];
         }
       });
     } else {

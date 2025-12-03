@@ -57,7 +57,7 @@
     do {
       dispatch_block_t block;
       if (self->_blocks.count > 0) {
-        block = _blocks[0];
+          block = self->_blocks[0];
         [self->_blocks removeObjectAtIndex:0];
       } else {
         break;

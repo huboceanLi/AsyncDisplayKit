@@ -302,7 +302,7 @@ CGRect _ASControlNodeGetExpandedBounds(ASControlNode *controlNode);
     {
       // Do we already have an event table for this control event?
       id<NSCopying> eventKey = _ASControlNodeEventKeyForControlEvent(controlEvent);
-      NSMutableArray *eventTargetActionArray = _controlEventDispatchTable[eventKey];
+      NSMutableArray *eventTargetActionArray = self->_controlEventDispatchTable[eventKey];
       
       if (!eventTargetActionArray) {
         eventTargetActionArray = [[NSMutableArray alloc] init];
@@ -315,7 +315,7 @@ CGRect _ASControlNodeGetExpandedBounds(ASControlNode *controlNode);
       [eventTargetActionArray addObject:targetAction];
       
       if (eventKey) {
-        [_controlEventDispatchTable setObject:eventTargetActionArray forKey:eventKey];
+          [self->_controlEventDispatchTable setObject:eventTargetActionArray forKey:eventKey];
       }
     });
 
@@ -376,7 +376,7 @@ CGRect _ASControlNodeGetExpandedBounds(ASControlNode *controlNode);
     {
       // Grab the dispatch table for this event (if we have it).
       id<NSCopying> eventKey = _ASControlNodeEventKeyForControlEvent(controlEvent);
-      NSMutableArray *eventTargetActionArray = _controlEventDispatchTable[eventKey];
+      NSMutableArray *eventTargetActionArray = self->_controlEventDispatchTable[eventKey];
       if (!eventTargetActionArray) {
         return;
       }
@@ -396,7 +396,7 @@ CGRect _ASControlNodeGetExpandedBounds(ASControlNode *controlNode);
       
       if (eventTargetActionArray.count == 0) {
         // If there are no targets for this event anymore, remove it.
-        [_controlEventDispatchTable removeObjectForKey:eventKey];
+          [self->_controlEventDispatchTable removeObjectForKey:eventKey];
       }
     });
 }
@@ -418,7 +418,7 @@ CGRect _ASControlNodeGetExpandedBounds(ASControlNode *controlNode);
       (ASControlNodeEvent controlEvent)
       {
         // Iterate on each target action pair
-        for (ASControlTargetAction *targetAction in _controlEventDispatchTable[_ASControlNodeEventKeyForControlEvent(controlEvent)]) {
+        for (ASControlTargetAction *targetAction in self->_controlEventDispatchTable[_ASControlNodeEventKeyForControlEvent(controlEvent)]) {
           ASControlTargetAction *resolvedTargetAction = [[ASControlTargetAction alloc] init];
           resolvedTargetAction.action = targetAction.action;
           resolvedTargetAction.target = targetAction.target;

@@ -69,15 +69,15 @@
 
 @implementation ASCustomLayoutManager
 
-- (void)showCGGlyphs:(const CGGlyph *)glyphs positions:(const CGPoint *)positions count:(NSUInteger)glyphCount font:(UIFont *)font matrix:(CGAffineTransform)textMatrix attributes:(NSDictionary<NSAttributedStringKey,id> *)attributes inContext:(CGContextRef)graphicsContext {
-    for (NSUInteger i = 0; i < glyphCount; i++) {
-        if (attributes[@"Attribute__CustomEmoji"] != nil) {
-            continue;
-        }
-        
-        [super showCGGlyphs:&glyphs[i] positions:&positions[i] count:1 font:font matrix:textMatrix attributes:attributes inContext:graphicsContext];
-    }
-}
+//- (void)showCGGlyphs:(const CGGlyph *)glyphs positions:(const CGPoint *)positions count:(NSUInteger)glyphCount font:(UIFont *)font matrix:(CGAffineTransform)textMatrix attributes:(NSDictionary<NSAttributedStringKey,id> *)attributes inContext:(CGContextRef)graphicsContext {
+//    for (NSUInteger i = 0; i < glyphCount; i++) {
+//        if (attributes[@"Attribute__CustomEmoji"] != nil) {
+//            continue;
+//        }
+//        
+//        [super showCGGlyphs:&glyphs[i] positions:&positions[i] count:1 font:font matrix:textMatrix attributes:attributes inContext:graphicsContext];
+//    }
+//}
 
 - (void)drawGlyphsForGlyphRange:(NSRange)glyphsToShow atPoint:(CGPoint)origin {
     [super drawGlyphsForGlyphRange:glyphsToShow atPoint:origin];

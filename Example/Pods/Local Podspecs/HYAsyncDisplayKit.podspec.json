@@ -1,59 +1,54 @@
 {
   "name": "HYAsyncDisplayKit",
-  "version": "0.2.5",
-  "summary": "A short description of HYAsyncDisplayKit.",
-  "description": "Add long description of the pod here.",
-  "homepage": "https://github.com/huboceanLi/AsyncDisplayKit",
+  "version": "0.2.6",
   "license": {
-    "type": "MIT",
-    "file": "LICENSE"
+    "type": "BSD"
   },
+  "homepage": "https://github.com/huboceanLi/AsyncDisplayKit",
   "authors": {
     "li437277219@gmail.com": "li437277219@gmail.com"
   },
+  "summary": "Smooth asynchronous user interfaces for iOS apps.",
   "source": {
     "git": "https://github.com/huboceanLi/AsyncDisplayKit.git",
-    "tag": "0.2.5"
+    "tag": "0.2.6"
   },
   "weak_frameworks": [
     "Photos",
     "MapKit",
     "AssetsLibrary"
   ],
-  "libraries": [
-    "c++",
-    "stdc++"
-  ],
-  "pod_target_xcconfig": {
-    "CLANG_CXX_LANGUAGE_STANDARD": "gnu++14",
-    "CLANG_CXX_LIBRARY": "libc++",
-    "OTHER_CPLUSPLUSFLAGS": "-std=gnu++14 -stdlib=libc++ -fcxx-modules -fmodules",
-    "OTHER_CFLAGS": "-fmodules -fcxx-modules -Qunused-arguments",
-    "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
-    "GCC_ENABLE_CPP_RTTI": "YES",
-    "HEADER_SEARCH_PATHS": "\"$(inherited)\" \"${PODS_ROOT}/HYAsyncDisplayKit\" \"${SDKROOT}/usr/include/c++/v1\" \"${SDKROOT}/usr/include\" \"${SDKROOT}/usr/lib/swift\" \"$(PLATFORM_DIR)/Developer/SDKs/$(PLATFORM_NAME).sdk/usr/include/c++/v1\" \"$(PLATFORM_DIR)/Developer/SDKs/$(PLATFORM_NAME).sdk/usr/include\"",
-    "FRAMEWORK_SEARCH_PATHS": "\"$(inherited)\" \"$(PLATFORM_DIR)/Developer/Library/Frameworks\"",
-    "OTHER_LDFLAGS": "-ObjC -lc++ -lstdc++ -all_load",
-    "DEFINES_MODULE": "YES",
-    "CLANG_ENABLE_MODULES": "YES",
-    "CLANG_MODULES_AUTOLINK": "YES",
-    "USE_HEADERMAP": "NO",
-    "VALID_ARCHS": "arm64 arm64e armv7 armv7s x86_64",
-    "ARCHS": "$(ARCHS_STANDARD)",
-    "GCC_OPTIMIZATION_LEVEL": "0",
-    "GCC_GENERATE_DEBUGGING_SYMBOLS": "YES"
-  },
-  "source_files": "HYAsyncDisplayKit/Classes/**/*",
-  "exclude_files": [
-    "HYAsyncDisplayKit/Info.plist",
-    "HYAsyncDisplayKit/*.plist",
-    "**/*Test*",
-    "**/*Tests*",
-    "**/*Demo*",
-    "**/*Example*"
-  ],
+  "requires_arc": true,
   "platforms": {
     "ios": "14.0"
   },
-  "requires_arc": true
+  "static_framework": true,
+  "user_target_xcconfig": {
+    "OTHER_LDFLAGS": "-ObjC"
+  },
+  "source_files": "HYAsyncDisplayKit/Classes/**/*",
+  "libraries": [
+    "c++",
+    "z"
+  ],
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES",
+    "CLANG_ENABLE_MODULES": "YES",
+    "CLANG_MODULES_AUTOLINK": "YES",
+    "PRODUCT_MODULE_NAME": "HYAsyncDisplayKit",
+    "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF": "NO",
+    "CLANG_CXX_LANGUAGE_STANDARD": "c++17",
+    "CLANG_CXX_LIBRARY": "libc++",
+    "OTHER_CPLUSPLUSFLAGS": "-std=c++17 -Werror -stdlib=libc++",
+    "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) MINIMAL_ASDK=1",
+    "HEADER_SEARCH_PATHS": "\"${PODS_ROOT}/HYAsyncDisplayKit/Source\" \"${PODS_ROOT}/HYAsyncDisplayKit/Source/PublicHeaders\""
+  },
+  "frameworks": [
+    "UIKit",
+    "Foundation",
+    "QuartzCore",
+    "CoreMedia",
+    "CoreText",
+    "CoreGraphics"
+  ]
 }
