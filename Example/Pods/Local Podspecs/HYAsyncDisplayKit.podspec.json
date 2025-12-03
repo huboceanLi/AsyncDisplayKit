@@ -1,6 +1,6 @@
 {
   "name": "HYAsyncDisplayKit",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "summary": "A short description of HYAsyncDisplayKit.",
   "description": "Add long description of the pod here.",
   "homepage": "https://github.com/huboceanLi/AsyncDisplayKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/huboceanLi/AsyncDisplayKit.git",
-    "tag": "0.1.8"
+    "tag": "0.1.9"
   },
   "compiler_flags": "-x objective-c++ -std=c++11 -stdlib=libc++",
   "user_target_xcconfig": {
