@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HYAsyncDisplayKit'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = 'A short description of HYAsyncDisplayKit.'
 
 # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
 
-
+    s.libraries = 'c++'
     s.pod_target_xcconfig = {
       'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',
       'CLANG_CXX_LIBRARY' => 'libc++',
