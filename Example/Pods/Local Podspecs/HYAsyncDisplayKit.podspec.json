@@ -1,9 +1,9 @@
 {
   "name": "HYAsyncDisplayKit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "A short description of HYAsyncDisplayKit.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/li437277219@gmail.com/HYAsyncDisplayKit",
+  "description": "Add long description of the pod here.",
+  "homepage": "https://github.com/huboceanLi/AsyncDisplayKit",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,15 @@
     "li437277219@gmail.com": "li437277219@gmail.com"
   },
   "source": {
-    "git": "https://github.com/li437277219@gmail.com/HYAsyncDisplayKit.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/huboceanLi/AsyncDisplayKit.git",
+    "tag": "0.1.1"
+  },
+  "pod_target_xcconfig": {
+    "CLANG_CXX_LANGUAGE_STANDARD": "c++11",
+    "CLANG_CXX_LIBRARY": "libc++"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "14.0"
   },
   "source_files": "HYAsyncDisplayKit/Classes/**/*"
 }

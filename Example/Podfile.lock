@@ -1,5 +1,5 @@
 PODS:
-  - HYAsyncDisplayKit (0.1.0)
+  - HYAsyncDisplayKit (0.1.1)
 
 DEPENDENCIES:
   - HYAsyncDisplayKit (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HYAsyncDisplayKit: d31bb9f45916261e0ad6822bdec4555001ff219e
+  HYAsyncDisplayKit: 25e8c424e806bbf39b9d7fbbcb5b896036d4c667
 
 PODFILE CHECKSUM: 3e0f495e27bf0b42aa4163d258b49948da5087a2
 
