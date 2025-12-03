@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HYAsyncDisplayKit'
-  s.version          = '0.2.4'
+  s.version          = '0.2.5'
   s.summary          = 'A short description of HYAsyncDisplayKit.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ Add long description of the pod here.
 
   s.weak_frameworks = 'Photos','MapKit','AssetsLibrary'
 
-  s.library = 'c++'
+  s.libraries = 'c++', 'stdc++'
 
 # 完整的编译器配置
   s.pod_target_xcconfig = {
@@ -99,7 +99,21 @@ Add long description of the pod here.
     'GCC_GENERATE_DEBUGGING_SYMBOLS' => 'YES'
   }
   
-
+  # 源文件配置
+  s.source_files = [
+    'HYAsyncDisplayKit/**/*.{h,m,mm,c,cpp,cc,cxx}',
+    'HYAsyncDisplayKit/**/*.{hpp,ipp,tpp}'
+  ]
+  
+  # 排除不需要的文件
+  s.exclude_files = [
+    'HYAsyncDisplayKit/Info.plist',
+    'HYAsyncDisplayKit/*.plist',
+    '**/*Test*',
+    '**/*Tests*',
+    '**/*Demo*',
+    '**/*Example*'
+  ]
   s.ios.deployment_target = '14.0'
   s.requires_arc = true
   s.source_files = 'HYAsyncDisplayKit/Classes/**/*'

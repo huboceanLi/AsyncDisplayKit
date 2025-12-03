@@ -1,6 +1,6 @@
 {
   "name": "HYAsyncDisplayKit",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "summary": "A short description of HYAsyncDisplayKit.",
   "description": "Add long description of the pod here.",
   "homepage": "https://github.com/huboceanLi/AsyncDisplayKit",
@@ -13,14 +13,17 @@
   },
   "source": {
     "git": "https://github.com/huboceanLi/AsyncDisplayKit.git",
-    "tag": "0.2.3"
+    "tag": "0.2.5"
   },
   "weak_frameworks": [
     "Photos",
     "MapKit",
     "AssetsLibrary"
   ],
-  "libraries": "c++",
+  "libraries": [
+    "c++",
+    "stdc++"
+  ],
   "pod_target_xcconfig": {
     "CLANG_CXX_LANGUAGE_STANDARD": "gnu++14",
     "CLANG_CXX_LIBRARY": "libc++",
@@ -40,9 +43,17 @@
     "GCC_OPTIMIZATION_LEVEL": "0",
     "GCC_GENERATE_DEBUGGING_SYMBOLS": "YES"
   },
+  "source_files": "HYAsyncDisplayKit/Classes/**/*",
+  "exclude_files": [
+    "HYAsyncDisplayKit/Info.plist",
+    "HYAsyncDisplayKit/*.plist",
+    "**/*Test*",
+    "**/*Tests*",
+    "**/*Demo*",
+    "**/*Example*"
+  ],
   "platforms": {
     "ios": "14.0"
   },
-  "requires_arc": true,
-  "source_files": "HYAsyncDisplayKit/Classes/**/*"
+  "requires_arc": true
 }
