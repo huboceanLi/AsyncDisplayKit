@@ -3,7 +3,7 @@ FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/HYAsyncDi
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/HYAsyncDisplayKit/HYAsyncDisplayKit.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"z" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreText" -framework "Foundation" -framework "QuartzCore" -framework "UIKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"z" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreText" -framework "Foundation" -framework "HYAsyncDisplayKit" -framework "QuartzCore" -framework "UIKit" -weak_framework "AssetsLibrary" -weak_framework "MapKit" -weak_framework "Photos"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

@@ -7,7 +7,7 @@
 #
 Pod::Spec.new do |spec|
   spec.name         = 'HYAsyncDisplayKit'
-  spec.version      = '0.3.0'
+  spec.version      = '0.3.1'
   spec.license      =  { :type => 'BSD' }
   spec.homepage     = 'https://github.com/huboceanLi/AsyncDisplayKit'
   spec.author           = { 'li437277219@gmail.com' => 'li437277219@gmail.com' }
@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   spec.ios.deployment_target = '14.0'
-  spec.static_framework = true
+  spec.static_framework = false
   # 用户目标配置
   spec.user_target_xcconfig = {
      'OTHER_LDFLAGS' => '-ObjC',
