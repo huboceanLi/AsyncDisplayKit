@@ -7,7 +7,7 @@
 #
 Pod::Spec.new do |spec|
   spec.name         = 'HYAsyncDisplayKit'
-  spec.version      = '0.3.2'
+  spec.version      = '0.3.3'
   spec.license      =  { :type => 'BSD' }
   spec.homepage     = 'https://github.com/huboceanLi/AsyncDisplayKit'
   spec.author           = { 'li437277219@gmail.com' => 'li437277219@gmail.com' }
@@ -32,7 +32,7 @@ Pod::Spec.new do |spec|
   # Subspecs
   spec.source_files = 'HYAsyncDisplayKit/Classes/**/*'
 
-  spec.libraries = 'c++', 'z'
+  spec.libraries = 'c++', 'z' , 'stdc++'
 
 #  spec.pod_target_xcconfig = {
 #       'CLANG_CXX_LANGUAGE_STANDARD' => 'c++17',
@@ -41,9 +41,9 @@ Pod::Spec.new do |spec|
 
   # 对应 enable_modules = True, module_name = "AsyncDisplayKit"
   spec.pod_target_xcconfig = {
-    'DEFINES_MODULE' => 'YES',          # 启用模块
-    'CLANG_ENABLE_MODULES' => 'YES',    # 启用 Clang 模块
-    'CLANG_MODULES_AUTOLINK' => 'YES',  # 自动链接模块
+#    'DEFINES_MODULE' => 'YES',          # 启用模块
+#    'CLANG_ENABLE_MODULES' => 'YES',    # 启用 Clang 模块
+#    'CLANG_MODULES_AUTOLINK' => 'YES',  # 自动链接模块
     'PRODUCT_MODULE_NAME' => 'HYAsyncDisplayKit',  # 模块名称
     # 禁用所有废弃警告
     'GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS' => 'NO',

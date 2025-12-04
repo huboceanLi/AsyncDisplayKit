@@ -1,6 +1,6 @@
 {
   "name": "HYAsyncDisplayKit",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "license": {
     "type": "BSD"
   },
@@ -11,7 +11,7 @@
   "summary": "Smooth asynchronous user interfaces for iOS apps.",
   "source": {
     "git": "https://github.com/huboceanLi/AsyncDisplayKit.git",
-    "tag": "0.3.1"
+    "tag": "0.3.2"
   },
   "weak_frameworks": [
     "Photos",
@@ -30,12 +30,10 @@
   "source_files": "HYAsyncDisplayKit/Classes/**/*",
   "libraries": [
     "c++",
-    "z"
+    "z",
+    "stdc++"
   ],
   "pod_target_xcconfig": {
-    "DEFINES_MODULE": "YES",
-    "CLANG_ENABLE_MODULES": "YES",
-    "CLANG_MODULES_AUTOLINK": "YES",
     "PRODUCT_MODULE_NAME": "HYAsyncDisplayKit",
     "GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS": "NO",
     "CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS": "NO",

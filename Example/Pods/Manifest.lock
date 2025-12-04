@@ -1,5 +1,5 @@
 PODS:
-  - HYAsyncDisplayKit (0.3.1):
+  - HYAsyncDisplayKit (0.3.2):
     - HYUIKitRuntimeUtils (= 1.0.3)
   - HYUIKitRuntimeUtils (1.0.3)
 
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HYAsyncDisplayKit: 5077e01b80a17dc7923b0f18fad74c05f2ed199d
+  HYAsyncDisplayKit: 36acabb6f379f61835c59ed9eae1406ddf314310
   HYUIKitRuntimeUtils: dd79fc2bf749dd4aa14f2e2878298a60059fa0e0
 
 PODFILE CHECKSUM: 17b1bf004794b6bf53d2a8e62f134534a0c17d20
