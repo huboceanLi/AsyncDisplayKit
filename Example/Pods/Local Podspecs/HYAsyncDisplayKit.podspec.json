@@ -1,6 +1,6 @@
 {
   "name": "HYAsyncDisplayKit",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": {
     "type": "BSD"
   },
@@ -11,7 +11,7 @@
   "summary": "Smooth asynchronous user interfaces for iOS apps.",
   "source": {
     "git": "https://github.com/huboceanLi/AsyncDisplayKit.git",
-    "tag": "0.3.0"
+    "tag": "0.3.1"
   },
   "weak_frameworks": [
     "Photos",
@@ -54,5 +54,10 @@
     "CoreMedia",
     "CoreText",
     "CoreGraphics"
-  ]
+  ],
+  "dependencies": {
+    "HYUIKitRuntimeUtils": [
+      "1.0.3"
+    ]
+  }
 }

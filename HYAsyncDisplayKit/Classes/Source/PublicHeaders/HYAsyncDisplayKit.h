@@ -69,3 +69,5 @@
 #import "ASCGImageBuffer.h"
 #import "ASControlTargetAction.h"
 #import "ASDisplayNode+FrameworkPrivate.h"
+
+#import "UIBarButtonItem+Proxy.h"

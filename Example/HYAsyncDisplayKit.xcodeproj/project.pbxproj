@@ -356,10 +356,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HYAsyncDisplayKit_Example/Pods-HYAsyncDisplayKit_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HYAsyncDisplayKit/HYAsyncDisplayKit.framework",
+				"${BUILT_PRODUCTS_DIR}/HYUIKitRuntimeUtils/HYUIKitRuntimeUtils.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HYAsyncDisplayKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HYUIKitRuntimeUtils.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -509,7 +511,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HYAsyncDisplayKit/HYAsyncDisplayKit-Prefix.pch";
 				INFOPLIST_FILE = "HYAsyncDisplayKit/HYAsyncDisplayKit-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -530,7 +532,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HYAsyncDisplayKit/HYAsyncDisplayKit-Prefix.pch";
 				INFOPLIST_FILE = "HYAsyncDisplayKit/HYAsyncDisplayKit-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

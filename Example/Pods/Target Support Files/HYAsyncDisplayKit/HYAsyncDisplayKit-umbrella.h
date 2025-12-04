@@ -85,6 +85,7 @@
 #import "CoreGraphics+ASConvenience.h"
 #import "HYAsyncDisplayKit.h"
 #import "NSArray+Diffing.h"
+#import "UIBarButtonItem+Proxy.h"
 #import "UIResponder+AsyncDisplayKit.h"
 #import "UIView+ASConvenience.h"
 #import "_ASAsyncTransaction.h"
