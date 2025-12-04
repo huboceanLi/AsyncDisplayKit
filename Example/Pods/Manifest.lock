@@ -1,11 +1,10 @@
 PODS:
-  - HYAsyncDisplayKit (0.3.4):
+  - HYAsyncDisplayKit (0.3.6):
     - HYUIKitRuntimeUtils (= 1.0.4)
   - HYUIKitRuntimeUtils (1.0.4)
 
 DEPENDENCIES:
   - HYAsyncDisplayKit (from `../`)
-  - HYUIKitRuntimeUtils (= 1.0.4)
 
 SPEC REPOS:
   trunk:
@@ -16,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HYAsyncDisplayKit: 56c845e922b288903366c28765ac46fb09af80e8
+  HYAsyncDisplayKit: 483a5769fe4aedd4937f6a4ca838319f6f508fcb
   HYUIKitRuntimeUtils: b5d2e746a737ae4f35e204587dad6b3107ece1c3
 
-PODFILE CHECKSUM: 1858514828b2ed205913983c341c1b827ffaed8e
+PODFILE CHECKSUM: cc8e56606c0eef816c6c90f61f686b50ecf4dcdf
 
 COCOAPODS: 1.16.2

@@ -7,8 +7,12 @@
 //  Licensed under Apache 2.0: http://www.apache.org/licenses/LICENSE-2.0
 //
 
-#import "UIResponder+AsyncDisplayKit.h"
+//#import <HYAsyncDisplayKit/UIResponder+AsyncDisplayKit.h>
+//#import <HYAsyncDisplayKit/ASAssert.h>
+//#import <HYAsyncDisplayKit/ASBaseDefines.h>
+//#import <HYAsyncDisplayKit/ASResponderChainEnumerator.h>
 
+#import "UIResponder+AsyncDisplayKit.h"
 #import "ASAssert.h"
 #import "ASBaseDefines.h"
 #import "ASResponderChainEnumerator.h"

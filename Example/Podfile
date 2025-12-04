@@ -5,7 +5,7 @@ platform :ios, '14.0'
 target 'HYAsyncDisplayKit_Example' do
   pod 'HYAsyncDisplayKit', :path => '../'
 
-  pod 'HYUIKitRuntimeUtils', '1.0.4'
+#  pod 'GDKAsyncDisplayKit', '0.0.5'
 
 
   target 'HYAsyncDisplayKit_Tests' do

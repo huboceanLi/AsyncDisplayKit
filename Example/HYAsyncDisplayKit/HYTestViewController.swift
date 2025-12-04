@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import HYAsyncDisplayKit
+import HYAsyncDisplayKit
 
 class HYTestViewController: UIViewController {
 
