@@ -7,7 +7,7 @@
 #
 Pod::Spec.new do |spec|
   spec.name         = 'HYAsyncDisplayKit'
-  spec.version      = '0.3.6'
+  spec.version      = '0.3.7'
   spec.license      = "MIT"
   spec.homepage     = 'https://github.com/huboceanLi/AsyncDisplayKit'
   spec.author           = { 'li437277219@gmail.com' => 'li437277219@gmail.com' }
