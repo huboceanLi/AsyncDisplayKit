@@ -7,7 +7,7 @@
 #
 Pod::Spec.new do |spec|
   spec.name         = 'HYAsyncDisplayKit'
-  spec.version      = '0.3.7'
+  spec.version      = '0.3.8'
   spec.license      = "MIT"
   spec.homepage     = 'https://github.com/huboceanLi/AsyncDisplayKit'
   spec.author           = { 'li437277219@gmail.com' => 'li437277219@gmail.com' }
@@ -24,6 +24,6 @@ Pod::Spec.new do |spec|
   spec.private_header_files = "Source/*.h"
   spec.frameworks = "Foundation", "UIKit", "QuartzCore", "CoreMedia", "CoreText", "CoreGraphics"
     
-  spec.dependency 'HYUIKitRuntimeUtils', '1.0.4'
+  spec.dependency 'HYUIKitRuntimeUtils', '1.0.5'
 
 end
