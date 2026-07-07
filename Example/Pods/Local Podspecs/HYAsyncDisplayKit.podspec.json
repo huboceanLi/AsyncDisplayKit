@@ -1,6 +1,6 @@
 {
   "name": "HYAsyncDisplayKit",
-  "version": "0.3.6",
+  "version": "0.3.8",
   "license": "MIT",
   "homepage": "https://github.com/huboceanLi/AsyncDisplayKit",
   "authors": {
@@ -9,7 +9,7 @@
   "summary": "Smooth asynchronous user interfaces for iOS apps.",
   "source": {
     "git": "https://github.com/huboceanLi/AsyncDisplayKit.git",
-    "tag": "0.3.6"
+    "tag": "0.3.8"
   },
   "requires_arc": true,
   "platforms": {
@@ -28,10 +28,5 @@
     "CoreMedia",
     "CoreText",
     "CoreGraphics"
-  ],
-  "dependencies": {
-    "HYUIKitRuntimeUtils": [
-      "1.0.4"
-    ]
-  }
+  ]
 }
